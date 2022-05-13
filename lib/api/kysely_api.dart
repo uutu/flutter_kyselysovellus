@@ -1,0 +1,1 @@
+// Toteuta tänne luokka KyselyApi
