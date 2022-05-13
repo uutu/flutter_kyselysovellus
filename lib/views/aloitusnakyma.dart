@@ -1,24 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kyselysovellus/components/tervehdysteksti.dart';
 import 'package:flutter_kyselysovellus/storage/kayttajatiedot.dart';
 
 class Aloitusnakyma extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final teksti = FutureBuilder(
-        future: Kayttajatiedot().tuttuKayttaja(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasData) {
-            if (snapshot.data) {
-              return Text('Hei taas!');
-            } else {
-              return Text('Tervetuloa uusi käyttäjä!');
-            }
-          } else if (snapshot.hasError) {
-            return Text('Käyttäjätietojen hakemisessa tapahtui virhe.');
-          } else {
-            return Text('Haetaan käyttäjätietoja.');
-          }
-        });
+    final teksti = Tervehdysteksti();
 
     final nappi = ElevatedButton(
         child: Text('Kysy kysymys'),
