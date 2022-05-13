@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kyselysovellus/components/tervehdysteksti.dart';
-import 'package:flutter_kyselysovellus/storage/kayttajatiedot.dart';
+import '../components/tervehdysteksti.dart';
 
 class Aloitusnakyma extends StatelessWidget {
   @override
@@ -13,6 +12,8 @@ class Aloitusnakyma extends StatelessWidget {
 
     final sarake = Column(children: [teksti, nappi]);
 
-    return Scaffold(body: SafeArea(child: sarake));
+    return Scaffold(
+        appBar: AppBar(title: Text('Kyselysovellus')),
+        body: SafeArea(child: Center(child: Container(child: sarake))));
   }
 }

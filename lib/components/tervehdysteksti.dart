@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../storage/kayttajatiedot.dart';
+import 'tyylitelty_teksti.dart';
 
 class Tervehdysteksti extends StatelessWidget {
   @override
@@ -9,9 +10,9 @@ class Tervehdysteksti extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data) {
-              return Text('Heippa taas!');
+              return TyyliteltyTeksti('Heippa taas!');
             } else {
-              return Text('Tervetuloa!');
+              return TyyliteltyTeksti('Tervetuloa!');
             }
           } else if (snapshot.hasError) {
             return Text('Virhe käyttäjätietojen hakemisessa.');
